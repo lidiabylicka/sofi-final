@@ -13,7 +13,7 @@ export default {
         brown: '#372126',
       },
       backgroundImage: {
-        main: 'linear-gradient(to bottom, var(--main-gradient-start), var(--main-gradient-end))',
+        main: 'linear-gradient(to bottom, #81FFC4 #EBE3AE)',
         card: 'linear-gradient(to bottom, var(--card-gradient-start), var(--card-gradient-end))',
         button: 'linear-gradient(to top, #103b37, #81FFC4)',
       },

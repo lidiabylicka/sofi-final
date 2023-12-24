@@ -1,68 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Roboto', system-ui, sans-serif;
+  }
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.light {
+  --darkblue: 16, 59, 55;
+  --linksdetails: 129, 255, 196;
+  --aqua: 77, 176, 146;
+  --liteblue: 129, 255, 196;
+  --vanilla: 235, 227, 174;
+  --red: 139, 0, 0;
+  --brown: 55, 33, 38;
+
+  --main-gradient-start: #103b37;
+  --main-gradient-end: #81ffc4;
+}
+.dark {
+  --darkblue: 2, 15, 14;
+  --linksdetails: 235, 227, 174;
+  --aqua: 37, 56, 50;
+  --liteblue: 129, 255, 196;
+  --vanilla: 235, 227, 174;
+  --red: 139, 0, 0;
+  --brown: 55, 33, 38;
+
+  --main-gradient-start: #000000;
+  --main-gradient-end: #38413b;
+
+  --card-gradient-start: #103b37;
+  --card-gradient-end: #757051;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --darkblue: 16, 59, 55;
+    --linksdetails: 129, 255, 196;
+    --aqua: 77, 176, 146;
+    --liteblue: 129, 255, 196;
+    --vanilla: 235, 227, 174;
+    --red: 139, 0, 0;
+    --brown: 55, 33, 38;
+
+    --main-gradient-start: #103b37;
+    --main-gradient-end: #81ffc4;
+
+    --card-gradient-start: #4db092;
+    --card-gradient-end: #ebe3ae;
+  }
+}
+.poke-details div:nth-child(1) {
+  color: var(--linksdetails);
+  font-weight: 700;
+}
+.poke-details div:nth-child(2) {
+  color: #34181e;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--linksdetails);
+}
+
+body * {
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #2fc9b0;
+  color: #08705f;
+}
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 43%,
+      #81ffc4 45%,
+      #81ffc4 55%,
+      rgba(0, 0, 0, 0) 57%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      #81ffc4 45%,
+      #81ffc4 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+input[type='search']::-webkit-search-cancel-button:hover {
+  scale: 1.3;
+  transition: all 0.25s ease;
+}
+
+::placeholder {
+  color: #08705f;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-radius: 6px;
+  padding: 5px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button:hover {
+  scale: 1.1;
+  transition: all 0.25s ease;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bg-main {
+  background-size: cover;
+  height: 100vh;
+}
+
+@keyframes widthAnimation {
+  0%,
+  100% {
+    width: 200px;
   }
-  a:hover {
-    color: #747bff;
+  50% {
+    width: 500px;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.animate-width {
+  animation: widthAnimation 5s ease-in-out infinite;
+}
+
+#collision {
+  width: 100%;
+}
+
+input {
+  border-radius: 8px;
+}
+
+.winner-card {
+  scale: 1.4;
+}
+
+.loser-card {
+  scale: 0.8;
+  opacity: 0.5;
 }
