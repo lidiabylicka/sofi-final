@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <h1 className='mt-10'>HAPPY BDAY SIS!</h1>
+      <h1 className='mt-10'>HAPPY BDAY SIS! ✨ 🥳 🎂</h1>
       <div>
         <p>
           <h3 className='bold'>Sofi, I hope you have a wonderful day</h3>
