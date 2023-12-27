@@ -13,7 +13,9 @@ function App() {
           <h2>Let me know when you`re ready to claim ^^</h2>
         </div>
       </div>
-      <a href='mailto:lidiabylicka@gmail.com'>CLAIM NOW</a>
+      <a href='mailto:lidiabylicka@gmail.com?subject=Claim%20Voucher&body=Hi%20Lidia,%0D%0A%0D%0AI%20am%20ready%20to%20claim%20the%20voucher.%0D%0A%0D%0AThank%20you!'>
+        CLAIM NOW
+      </a>
     </>
   );
 }
