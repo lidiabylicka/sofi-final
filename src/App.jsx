@@ -13,9 +13,7 @@ function App() {
           <h2>Let me know when you`re ready to claim ^^</h2>
         </div>
       </div>
-      <a href='mailto:lidiabylicka@gmail.com?subject=Claim%20JapanVoucher%20Now'>
-        CLAIM NOW
-      </a>
+      <a href='mailto:lidiabylicka@gmail.com'>CLAIM NOW</a>
     </>
   );
 }
